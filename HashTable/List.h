@@ -57,7 +57,7 @@ void List<T>::insert(T content) {
             if (current->next != 0 && current->content <= content)
                 current = current->next;
             else {
-                    if(current ==  begin){
+                    if(current ==  begin &&  content <= current->content){
                         node->next = begin;
                         begin = node;
                     }else

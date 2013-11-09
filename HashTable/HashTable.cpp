@@ -82,7 +82,7 @@ bool Content::operator<=(const Content &right){
 
 
 bool Content::operator==(const Content &right){
-    return this->key == right.key;
+    return this->string == right.string;
 }
 
 std::ostream &operator<<(std::ostream &output, const Content &content){
