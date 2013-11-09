@@ -47,7 +47,7 @@ void HashTable::clear(){
 
 void HashTable::show(){
     for(int i=0; i<size; ++i){
-        std::cout<<"* "; container[i].show();
+        std::cout<<i<<". "; container[i].show();
     }
     std::cout<<"\n";
 }
