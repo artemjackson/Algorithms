@@ -2,7 +2,7 @@
 
 int main()
 {
-    HashTable table(10);
+    HashTable table(5);
     table.insert("Lena");
     table.insert("Olya");
     table.insert("Nadya");
@@ -14,9 +14,9 @@ int main()
     table.insert("Lesha");
     table.insert("Annna");
     table.insert("Veranika");
-    table.show();
+    //table.show();
     table.remove("Vera");
-    table.show();
+    //table.show();
 
     return 0;
 }

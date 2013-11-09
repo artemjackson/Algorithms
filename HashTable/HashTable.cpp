@@ -1,4 +1,5 @@
 #include "HashTable.h"
+#include <cstdlib>
 
 HashTable::HashTable(int size):
     size(size),
@@ -22,6 +23,9 @@ bool HashTable::find(std::string string){
 }
 
 void HashTable::insert(std::string string){
+    show();
+    system("sleep 1");
+
     int key = hashFunction(string);
 
     Content content(key,string);
@@ -29,6 +33,8 @@ void HashTable::insert(std::string string){
     int i = key % size;
 
     container[i].insert(content);
+
+    show();
 }
 
 void HashTable::remove(std::string string){
@@ -46,6 +52,7 @@ void HashTable::clear(){
 }
 
 void HashTable::show(){
+    system("clear");
     for(int i=0; i<size; ++i){
         std::cout<<i<<". "; container[i].show();
     }
