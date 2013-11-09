@@ -7,25 +7,23 @@ using namespace std;
 int main() {
     srand(time(NULL));
     SBT tree;
-   // int i;
+    int i;
 
+    for(int i=0; i<20; ++i)
+    tree.insertNode(i*5);
 
+    for(int i=0; i<20; ++i)
+    tree.insertNode(-i*4);
 
-    for(int i=0; i<10; ++i)
-    tree.insertNode(-rand()%100);
+    tree.show();
+    std::cin>>i;
 
-    for(int i=0; i<10; ++i)
-    tree.insertNode(rand()%100);
-
+    //tree.deleteNode(10);
     tree.show();
     //std::cin>>i;
 
-    tree.deleteNode(10);
-    tree.show();
-    //std::cin>>i;
-
-    for(int i=0; i<10; ++i)
-    tree.insertNodeToRoot(rand()%100-50);
+    for(int i=0; i<20; ++i)
+    tree.insertNodeToRoot(rand()%121-60);
 
     //    for(int i=0; i<4; ++i)
         /*
