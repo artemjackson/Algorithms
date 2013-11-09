@@ -24,7 +24,7 @@ bool HashTable::find(std::string string){
 
 void HashTable::insert(std::string string){
     show();
-    system("sleep 1");
+    system("sleep 1.5");
 
     int key = hashFunction(string);
 

@@ -1,4 +1,5 @@
 #include "HashTable.h"
+#include <cstdlib>
 
 int main()
 {
@@ -9,14 +10,16 @@ int main()
     table.insert("Kolya");
     table.insert("Semen");
     table.insert("Artem");
+     table.insert("Vera");
     table.insert("Andrey");
     table.insert("Vitalik");
     table.insert("Lesha");
-    table.insert("Annna");
-    table.insert("Veranika");
-    //table.show();
+    table.insert("Anna");
+
+    table.show();
+    system("sleep 1.5");
     table.remove("Vera");
-    //table.show();
+    table.show();
 
     return 0;
 }

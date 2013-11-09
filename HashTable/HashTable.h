@@ -8,6 +8,7 @@
 class Content {
 public:
     Content(){};
+    ~Content(){};
     Content(int key, std::string string );
     bool operator<=(const Content &right);
     bool operator==(const Content &right);
@@ -36,7 +37,4 @@ private:
     List<Content> *container;
     int hashFunction(std::string string);
 };
-
-
-
 #endif // HASHTABLE_H_INCLUDED

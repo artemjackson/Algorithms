@@ -75,7 +75,7 @@ void List<T>::insert(T content) {
 
 template <typename T>
 void List<T>::remove(T content) {
-    Node *previous, *current = begin;
+    Node *previous = 0, *current = begin;
 
     while(current != 0){
         if(current->content == content)
