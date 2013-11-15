@@ -74,7 +74,7 @@ void SBT::insertNodeToRoot(T data) {
 
         while(root->left != node && root->right != node ) {
 
-            system("sleep 0.5");
+            system("sleep 1.1");
            // std::cin>>i;
             show();
             insertFixup(node);

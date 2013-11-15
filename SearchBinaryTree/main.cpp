@@ -10,10 +10,10 @@ int main() {
     int i;
 
     for(int i=0; i<20; ++i)
-    tree.insertNode(i*5);
+    tree.insertNode(i*10);
 
-    for(int i=0; i<20; ++i)
-    tree.insertNode(-i*4);
+   // for(int i=0; i<20; ++i)
+    //tree.insertNode(-i*10);
 
     tree.show();
     std::cin>>i;
@@ -21,21 +21,21 @@ int main() {
     //tree.deleteNode(10);
     tree.show();
     //std::cin>>i;
-
+ //tree.insertNode(12);
     for(int i=0; i<20; ++i)
-    tree.insertNodeToRoot(rand()%121-60);
+   tree.insertNodeToRoot(rand()%101/*121-60*/);
 
     //    for(int i=0; i<4; ++i)
-        /*
+       /*
         tree.insertNode(100);
         tree.insertNode(200);
         tree.insertNode(300);
         tree.insertNode(150);
         tree.insertNode(250);
         tree.insertNode(50);
-        tree.insertNode(0);
-        tree.insertNode(75);
-        tree.show();
+
+        //tree.insertNode(75);
+   //     tree.show();
 
         tree.insertNodeToRoot(175);
         */

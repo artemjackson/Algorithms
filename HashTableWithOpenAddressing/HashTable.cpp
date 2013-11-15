@@ -1,15 +1,21 @@
 #include "HashTable.h"
+
 #include <cstdlib>
 
 HashTable::HashTable(int size):
     size(size),
-    container(new List<Content>[size])
+    container(new Content*[size])
 {
+    for(int i=0; i<size; ++i)
+        container[i] = 0;
 }
+
 HashTable::~HashTable(){
     clear();
+
     delete []container;
     container = 0;
+
     size = 0;
 }
 
@@ -19,42 +25,76 @@ bool HashTable::find(std::string string){
     Content content(key,string);
 
     int i = key % size;
-    return container[i].find(content);
+    int k = 0;
+
+    if(container[i] && k < size)
+    {
+        if(*container[i] == content)
+            return true;
+        else{
+            i = possition(i);
+            ++k;
+        }
+    }
+    return false;
 }
 
 void HashTable::insert(std::string string){
-    show();
-    system("sleep 0.5");
+    //show();
+    //system("sleep 0.5");
 
     int key = hashFunction(string);
 
-    Content content(key,string);
+    Content *content = new Content(key,string);
 
     int i = key % size;
 
-    container[i].insert(content);
+    while(container[i])
+        i = possition(i);
 
-    show();
+    container[i] = content;
+
 }
 
 void HashTable::remove(std::string string){
     int key = hashFunction(string);
 
-    Content content(key, string);
+    Content content(key,string);
 
     int i = key % size;
-    container[i].remove(content);
+    int k = 0;
+
+    if(container[i] && k < size)
+    {
+        if(*container[i] == content)
+        {
+            delete container[i];
+            container[i] = 0;
+            return;
+        }
+        else{
+            i = possition(i);
+            ++k;
+        }
+    }
 }
+
 
 void HashTable::clear(){
     for(int i=0; i<size; ++i)
-    container[i].clear();
+    {
+        delete container[i];
+        container[i] = 0;
+    }
 }
 
 void HashTable::show(){
     system("clear");
     for(int i=0; i<size; ++i){
-        std::cout<<i<<". "; container[i].show();
+        std::cout<<i<<". ";
+        if(container[i])
+            std::cout<<*container[i];
+        std::cout<<"\n";
     }
     std::cout<<"\n";
 }
@@ -65,6 +105,10 @@ int HashTable::hashFunction(std::string string){
     for(int i = 0; string[i] != '\0'; ++i)
         key+=string[i];
     return key;
+}
+
+int HashTable::possition(int i){
+    return (++i%size);
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++//
