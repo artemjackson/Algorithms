@@ -1,0 +1,24 @@
+q0 #   q1 # R
+
+q1 1   q2 1 R
+q2 0   q3 0 R
+q3 1   q4 1 R
+q4 0   q5 0 R
+q5 1   q6 1 R
+q6 1   qy 1 R
+
+q1 0   q1 0 R
+q2 1   q1 1 R
+q3 0   q1 0 R
+q4 1   q1 1 R
+q5 0   q1 0 R
+q6 0   q1 0 R
+
+q1 #   qn # L
+q2 #   qn # L
+q3 #   qn # L
+q4 #   qn # L
+q5 #   qn # L
+q6 #   qn # L
+
+
